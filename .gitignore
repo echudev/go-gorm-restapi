@@ -1,0 +1,27 @@
+# Archivos binarios generados por Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Archivos binarios generados por Go 1.5+
+*.test
+*.prof
+
+# Archivos de construcción
+bin/
+pkg/
+
+# Archivos de configuración específicos del sistema operativo
+.idea/
+.vscode/
+
+# Archivos de dependencias
+vendor/
+
+# Archivos de registro y archivos temporales
+*.log
+*.out
+*.pid
+*.lock
