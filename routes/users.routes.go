@@ -25,6 +25,10 @@ func GetUserHandler(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("User not found"))
 	}
 
+	// Join de modelo user, asociado con modelo tasks - devuelve usuario y sus tareas
+	// no requiere que modifiques nada en lo models, el join se hace en esta línea
+	db.DB.Model(&user).Association("Tasks").Find(&user.Tasks)
+
 	json.NewEncoder(w).Encode(&user)
 }
 
