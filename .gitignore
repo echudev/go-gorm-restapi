@@ -25,3 +25,6 @@ vendor/
 *.out
 *.pid
 *.lock
+
+# Variables de entorno
+.env

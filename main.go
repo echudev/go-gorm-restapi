@@ -1,15 +1,20 @@
 package main
 
 import (
+	"log"
 	"net/http"
 
 	"github.com/echudev/go-gorm-restapi/db"
 	"github.com/echudev/go-gorm-restapi/models"
 	"github.com/echudev/go-gorm-restapi/routes"
 	"github.com/gorilla/mux"
+	"github.com/joho/godotenv"
 )
 
 func main() {
+	if err := godotenv.Load(".env"); err != nil {
+		log.Fatalln(err)
+	}
 
 	db.DBConection()
 	db.DB.AutoMigrate(models.Task{})
